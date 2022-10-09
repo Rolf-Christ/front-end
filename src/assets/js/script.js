@@ -1,12 +1,14 @@
+import $ from 'jquery'
+
 $(function() {
 
     $('.nav-item.dropdown').mouseenter(function() {
-        $(this).addClass('show');
-        $(this).children('.dropdown-menu').addClass('show');
+        $(this).addclassName('show');
+        $(this).children('.dropdown-menu').addclassName('show');
         $(this).children('.dropdown-toggle').attr('aria-expanded', 'true');
     }).mouseleave(function() {
-        $(this).removeClass('show');
-        $(this).children('.dropdown-menu').removeClass('show');
+        $(this).removeclassName('show');
+        $(this).children('.dropdown-menu').removeclassName('show');
         $(this).children('.dropdown-toggle').attr('aria-expanded', 'false');
     });
 
@@ -18,8 +20,8 @@ $(function() {
     var imgLarge = $('.img-large');
 
     imgLarge.mousemove(function() {
-        var relX = event.pageX - $(this).offset().left;
-        var relY = event.pageY - $(this).offset().top;
+        var relX = Event.pageX - $(this).offset().left;
+        var relY = Event.pageY - $(this).offset().top;
         var width = $(this).width();
         var height = $(this).height();
         var x = (relX / width) * 100;
